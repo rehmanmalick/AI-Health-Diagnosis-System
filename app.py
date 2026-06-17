@@ -225,7 +225,7 @@ def predictliver():
     if int(result) == 1:
         prediction = "Patient has a high risk of Liver Disease, please consult your doctor immediately"
     else:
-        prediction = "Patient has a low risk of Kidney Disease"
+        prediction = "Patient has a low risk of Liver Disease"
     return render_template("liver_result.html", prediction_text=prediction)
 
 
@@ -293,14 +293,14 @@ pickle.dump(classifier, open(filename, 'wb'))
 @app.route('/predictt', methods=['POST'])
 def predictt():
     if request.method == 'POST':
-        preg = request.form['pregnancies']
-        glucose = request.form['glucose']
-        bp = request.form['bloodpressure']
-        st = request.form['skinthickness']
-        insulin = request.form['insulin']
-        bmi = request.form['bmi']
-        dpf = request.form['dpf']
-        age = request.form['age']
+        preg = float(request.form['pregnancies'])
+        glucose = float(request.form['glucose'])
+        bp = float(request.form['bloodpressure'])
+        st = float(request.form['skinthickness'])
+        insulin = float(request.form['insulin'])
+        bmi = float(request.form['bmi'])
+        dpf = float(request.form['dpf'])
+        age = float(request.form['age'])
 
         data = np.array([[preg, glucose, bp, st, insulin, bmi, dpf, age]])
         my_prediction = classifier.predict(data)
@@ -379,6 +379,8 @@ def getResponse(ints, intents_json):
 
 def chatbot_response(msg):
     ints = predict_class(msg, model2)
+    if not ints:
+        return "I'm sorry, I didn't understand that. Please try again."
     res = getResponse(ints, intents)
     return res
 
