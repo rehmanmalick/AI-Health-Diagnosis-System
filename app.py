@@ -5,6 +5,7 @@ Created on Sat Mar 25 09:20:13 2023
 @author: piku
 """
 
+import os
 import joblib
 from flask import Flask, render_template, redirect, url_for, request
 from flask_bootstrap import Bootstrap
@@ -21,17 +22,23 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
 import nltk
+nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
+nltk.download('wordnet', quiet=True)
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 
+# Get the base directory of this script
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
 from keras.models import load_model
-model2 = load_model('C:\\Users\\piku\\OneDrive\\Desktop\\ROCKY_PI\\Disease Diagnosis System cloud\\Disease Diagnosis\\model.h5')
+model2 = load_model(os.path.join(BASE_DIR, 'model.h5'))
 
 import json
 import random
-intents = json.loads(open('C:\\Users\\piku\\OneDrive\\Desktop\\ROCKY_PI\\Disease Diagnosis System cloud\\Disease Diagnosis\\data.json').read())
-words = pickle.load(open('C:\\Users\\piku\\OneDrive\\Desktop\\ROCKY_PI\\Disease Diagnosis System cloud\\Disease Diagnosis\\texts.pkl','rb'))
-classes = pickle.load(open('C:\\Users\\piku\\OneDrive\\Desktop\\ROCKY_PI\\Disease Diagnosis System cloud\\Disease Diagnosis\\labels.pkl','rb'))
+intents = json.loads(open(os.path.join(BASE_DIR, 'data.json')).read())
+words = pickle.load(open(os.path.join(BASE_DIR, 'texts.pkl'), 'rb'))
+classes = pickle.load(open(os.path.join(BASE_DIR, 'labels.pkl'), 'rb'))
 
 
 ###############################################################################
@@ -42,9 +49,10 @@ classifier = pickle.load(open(filename, 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 model1 = pickle.load(open('model1.pkl', 'rb'))
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='Templates', static_folder='Static')
 app.config['SECRET_KEY'] = 'secret'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Users/piku/OneDrive/Desktop/ROCKY_PI/Disease Diagnosis System cloud/Disease Diagnosis/database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(BASE_DIR, 'database.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
 login_manager = LoginManager()
@@ -114,7 +122,7 @@ def login():
 def signup():
     form = RegisterForm()
     if form.validate_on_submit():
-        hashed_password = generate_password_hash(form.password.data, method='sha256')
+        hashed_password = generate_password_hash(form.password.data, method='pbkdf2:sha256')
         new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
@@ -376,4 +384,6 @@ def chatbot_response(msg):
 
 
 if __name__ == "__main__":
-    app.run()
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
