@@ -5,7 +5,7 @@ flask_bootstrap
 flask_login
 flask_sqlalchemy
 flask_wtf
-scikit_learn
+scikit_learn==0.24.1
 WTForms
 numpy<2
 pandas
