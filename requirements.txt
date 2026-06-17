@@ -3,7 +3,8 @@ Werkzeug==2.3.7
 joblib
 flask_bootstrap
 flask_login
-flask_sqlalchemy
+SQLAlchemy==1.4.46
+flask_sqlalchemy==2.5.1
 flask_wtf
 scikit_learn==0.24.1
 WTForms
