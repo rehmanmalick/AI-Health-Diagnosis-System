@@ -18,21 +18,24 @@ A Flask-based web application that uses Machine Learning to predict the risk of 
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Backend | Python, Flask |
+| Layer     | Technology                     |
+| --------- | ------------------------------ |
+| Backend   | Python, Flask                  |
 | ML Models | Scikit-learn, TensorFlow/Keras |
-| Chatbot | NLTK, Keras Neural Network |
-| Database | SQLite, Flask-SQLAlchemy |
-| Frontend | HTML, CSS, Bootstrap |
+| Chatbot   | NLTK, Keras Neural Network     |
+| Database  | SQLite, Flask-SQLAlchemy       |
+| Frontend  | HTML, CSS, Bootstrap           |
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### Prerequisites
-- Python 3.8 or higher
-- Git
+## Prerequisites (Install These First)
+
+1. Python 3.9 — https://python.org
+2. Git — https://git-scm.com
+3. Microsoft C++ Build Tools — https://visualstudio.microsoft.com/visual-cpp-build-tools/
+   (Required for greenlet package)
 
 ---
 
@@ -56,11 +59,13 @@ python -m venv venv
 ### Step 3 — Activate Virtual Environment
 
 **Windows:**
+
 ```bash
 venv\Scripts\activate
 ```
 
 **Mac/Linux:**
+
 ```bash
 source venv/bin/activate
 ```
@@ -165,6 +170,7 @@ AI-Health-Diagnosis-System/
 ## ⚠️ Common Issues
 
 **`no such table: user` error:**
+
 ```bash
 python -c "from app import app, db; app.app_context().__enter__(); db.create_all()"
 ```

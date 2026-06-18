@@ -14,3 +14,5 @@ nltk
 tensorflow
 keras
 email_validator
+greenlet==2.0.2
+gunicorn
