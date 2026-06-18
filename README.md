@@ -1,99 +1,180 @@
-# AI-Driven HealthBot Disease Diagnosis System
+# 🏥 AI-Driven HealthBot & Disease Diagnosis System
 
-This system combines the power of conversational chatbot interfaces with advanced disease prediction algorithms, enabling users to receive real-time medical guidance and identify potential health issues at an early stage.
+A Flask-based web application that uses Machine Learning to predict the risk of multiple diseases and includes an AI-powered Health Chatbot (Dia).
 
-##	GUI Implementation Snapshot with Documentation Stuff:
+---
 
+## 🚀 Features
 
-## Index Page: This is mainly the initial launching page which contains different Modules such as Login, Signup, Help Section so on.
+- 🩸 **Diabetes Prediction**
+- ❤️ **Heart Disease Prediction**
+- 🫘 **Kidney Disease Prediction**
+- 🫀 **Liver Disease Prediction**
+- 🎗️ **Breast Cancer Prediction**
+- 🤖 **AI Health Chatbot (Dia)**
+- 🔐 **User Authentication (Login/Signup)**
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/2fa0f387-ba31-4c19-b929-a9e2e1b706ce)
+---
 
-Fig 6.3.1
+## 🛠️ Tech Stack
 
+| Layer | Technology |
+|---|---|
+| Backend | Python, Flask |
+| ML Models | Scikit-learn, TensorFlow/Keras |
+| Chatbot | NLTK, Keras Neural Network |
+| Database | SQLite, Flask-SQLAlchemy |
+| Frontend | HTML, CSS, Bootstrap |
 
-## Sign Up Page: It deals with new user registration by taking up to 3 parameters
+---
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/68e6641d-6960-46c9-9a3b-8f1b9c56d77d)
+## ⚙️ Installation & Setup
 
-. Fig 6.3.2
- 
+### Prerequisites
+- Python 3.8 or higher
+- Git
 
-## Login Page: In the Login Page, providing authentic User credentials helps one to reach the dashboard
+---
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/f437d523-b83a-4648-a902-575492613fc1)
+### Step 1 — Clone the Repository
 
-Fig 6.3.3
+```bash
+git clone https://github.com/rehmanmalick/AI-Health-Diagnosis-System.git
+cd AI-Health-Diagnosis-System
+```
 
+---
 
-## Dashboard Page: Here, it consists of 5 different health diagnosis models & disease index Page which contains all the information related to the disease briefly.
+### Step 2 — Create Virtual Environment
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/40ddb8a8-bfb0-41b3-ba85-2232426fe0d3)
+```bash
+python -m venv venv
+```
 
-Fig 6.3.4
+---
 
+### Step 3 — Activate Virtual Environment
 
-## Disease Index Page: It mostly includes a list of all the diseases and given a bit of content about their symptoms. So, it is just like a directory to learn more about the disease if the system predicts the likelihood of a user having the disease.
+**Windows:**
+```bash
+venv\Scripts\activate
+```
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/1dbec645-5fc2-4230-8f04-d26bd57af40d)
+**Mac/Linux:**
+```bash
+source venv/bin/activate
+```
 
-Fig 6.3.5
+---
 
+### Step 4 — Install Dependencies
 
-## Cancer Detection Page: This is just a simple form that takes patient input for cancer diagnosis.
+```bash
+pip install -r requirements.txt
+```
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/8b9d1d23-c054-4331-9b2a-44f215674af0)
+> ⚠️ This may take 3-5 minutes (TensorFlow is large)
 
-Fig 6.3.6
+---
 
+### Step 5 — Train Chatbot Model (First Time Only)
 
-## Cancer Detection Page: This is just a simple form that takes patient input for cancer diagnosis & predicts if the patient is likelihood of having the diseaese or not.
+```bash
+python training.py
+```
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/9441b143-de73-4c68-830d-467d82e972d0)
+> This will train the AI chatbot and save `model.h5`, `texts.pkl`, `labels.pkl`
+> Takes about 1-2 minutes
 
-Fig 6.3.7
+---
 
+### Step 6 — Run the Application
 
-## Cancer Detection Page: Provide the result of cancer disease diagnosis
+```bash
+python app.py
+```
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/192640c2-a3b7-481d-9845-f17b423dd404)
+---
 
-Fig 6.3.8
- 
+### Step 7 — Open in Browser
 
-## Report Download Page: A Patient can download their diagnosis report in screenshot format
+```
+http://127.0.0.1:5000
+```
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/6e63b036-18bf-446f-b5fb-7c5a5b69841d)
+---
 
-Fig 6.3.9
+## 📋 Quick Start (All Commands Together)
 
+```bash
+git clone https://github.com/rehmanmalick/AI-Health-Diagnosis-System.git
+cd AI-Health-Diagnosis-System
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python training.py
+python app.py
+```
 
-## Help page: It guides a patient on how to use this entire health diagnosis system.
+---
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/1afdcd37-86cd-4895-aa2d-09d4254e090e)
+## 🗂️ Project Structure
 
-Fig 6.4.0
- 
+```
+AI-Health-Diagnosis-System/
+├── app.py                          # Main Flask application
+├── training.py                     # Chatbot model training script
+├── data.json                       # Chatbot intents and responses
+├── diabetes.csv                    # Diabetes dataset
+├── requirements.txt                # Python dependencies
+├── model.h5                        # Breast cancer model (Keras)
+├── model.pkl                       # Breast cancer model (sklearn)
+├── model1.pkl                      # Heart disease model
+├── kidney_model.pkl                # Kidney disease model
+├── liver_model.pkl                 # Liver disease model
+├── diabetes-prediction-rfc-model.pkl  # Diabetes model
+├── texts.pkl                       # Chatbot vocabulary
+├── labels.pkl                      # Chatbot classes
+├── Templates/                      # HTML templates
+│   ├── index.html
+│   ├── login.html
+│   ├── signup.html
+│   ├── dashboard.html
+│   ├── chatbot.html
+│   ├── diabetes.html
+│   ├── heart.html
+│   ├── kidney.html
+│   ├── liver.html
+│   └── cancer.html
+└── Static/                         # CSS and images
+```
 
-## Chatbot Index Page: This page deals with launching the chatbot & beginning the communication by sending greetings to the patient
+---
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/a09f82e2-c8ea-4a61-a0bc-d73871555928)
+## 💡 How to Use
 
-Fig 6.4.1
+1. **Signup** — Create a new account
+2. **Login** — Login with your credentials
+3. **Dashboard** — Select a disease to predict
+4. **Fill Form** — Enter patient details
+5. **Predict** — Get risk assessment result
+6. **Chatbot** — Ask health questions to Dia
 
+---
 
-## Chatbot QnA Page: By asking a meaningful health query it will deliver the answers to its user
+## ⚠️ Common Issues
 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/5615e192-7ba9-4e4b-8a11-c37059471be1)
+**`no such table: user` error:**
+```bash
+python -c "from app import app, db; app.app_context().__enter__(); db.create_all()"
+```
 
-Fig 6.4.2
+**Model version warning** — Ignore, app works fine
 
- 
-![image](https://github.com/picoders1/AI-based-Healthcare-Chatbot---Disease-Detection-System/assets/87698874/968d612a-660d-4f95-9d40-01127c5f261e)
+**Slow startup** — Normal, TensorFlow takes time to load
 
+---
 
-Fig 6.4.3
+## 👨‍💻 Developer
 
-
-## Thank You !!
-
+**rem!** — [GitHub](https://github.com/rehmanmalick)
