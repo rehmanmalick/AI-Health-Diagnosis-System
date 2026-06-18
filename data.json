@@ -1,147 +1,102 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
-         "responses": ["Good to see you again", "Hi there, how can I help?"],
+         "patterns": ["Hi", "Hi there", "How are you", "Hey", "Hello", "Good day", "Hello there", "Greetings", "Good morning", "Good evening"],
+         "responses": ["Hi there! I am Dia, your Health Assistant. How can I help you today?", "Hello! I am here to help you with health related questions.", "Good to see you! How can I assist you today?"],
          "context": [""]
         },
         {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
-         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "patterns": ["Bye", "See you later", "Goodbye", "See you", "Farewell", "Take care", "Bye bye"],
+         "responses": ["See you!", "Have a nice day!", "Bye! Take care of your health!"],
          "context": [""]
         },
         {"tag": "thanks",
-         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
-         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome thanks", "Thanks for helping me", "Thank you so much", "Great help", "Helpful"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure! Stay healthy!"],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["What can you do", "How can you help", "What help do you provide", "What support is offered", "Help me", "What do you know", "Tell me what you can do"],
+         "responses": ["I can help you with information about Diabetes, Heart Disease, Kidney Disease, Liver Disease, Breast Cancer, and general health tips. You can also use our prediction tools to check your risk!"],
+         "context": [""]
+        },
+        {"tag": "diabetes_info",
+         "patterns": ["What is diabetes", "Tell me about diabetes", "Diabetes information", "What causes diabetes", "Explain diabetes", "diabetes", "sugar disease", "blood sugar disease", "diabetic", "About diabetes"],
+         "responses": ["Diabetes is a chronic disease where the body cannot properly regulate blood sugar (glucose) levels. There are two main types: Type 1 (body does not produce insulin) and Type 2 (body does not use insulin effectively). Common symptoms include increased thirst, frequent urination, fatigue, and blurred vision. Use our Diabetes Prediction tool to check your risk!"],
+         "context": [""]
+        },
+        {"tag": "diabetes_symptoms",
+         "patterns": ["Symptoms of diabetes", "Signs of diabetes", "How to know if I have diabetes", "Diabetes symptoms", "diabetes signs", "diabetic symptoms", "diabetes warning signs"],
+         "responses": ["Common symptoms of diabetes include: increased thirst and urination, extreme fatigue, blurry vision, slow healing cuts, tingling or numbness in hands and feet, unexplained weight loss, and increased hunger. If you experience these, consult a doctor and use our Diabetes Prediction tool!"],
+         "context": [""]
+        },
+        {"tag": "heart_disease_info",
+         "patterns": ["What is heart disease", "Tell me about heart disease", "Heart disease information", "What causes heart disease", "Explain heart disease", "heart disease", "cardiac disease", "heart problems", "About heart disease", "heart"],
+         "responses": ["Heart disease refers to conditions affecting the heart structure and function. The most common type is coronary artery disease caused by plaque buildup in arteries. Risk factors include high blood pressure, high cholesterol, smoking, diabetes, obesity, and family history. Use our Heart Disease Prediction tool to assess your risk!"],
+         "context": [""]
+        },
+        {"tag": "heart_symptoms",
+         "patterns": ["Symptoms of heart disease", "Signs of heart disease", "Heart attack symptoms", "Chest pain", "Heart disease symptoms", "heart symptoms", "heart disease signs", "signs of heart attack", "heart warning signs", "heart attack signs"],
+         "responses": ["Warning signs of heart disease include: chest pain or discomfort, shortness of breath, pain in arms, neck, jaw or back, nausea, cold sweats, dizziness, and fatigue. Heart attack symptoms appear suddenly. If you experience chest pain, call emergency services immediately!"],
+         "context": [""]
+        },
+        {"tag": "kidney_disease_info",
+         "patterns": ["What is kidney disease", "Tell me about kidney disease", "Kidney disease information", "What causes kidney disease", "Explain kidney disease", "kidney disease", "kidney problems", "renal disease", "About kidney disease", "kidney"],
+         "responses": ["Kidney disease occurs when the kidneys are damaged and cannot filter blood properly. Causes include diabetes, high blood pressure, and repeated kidney infections. Early stages often have no symptoms. Use our Kidney Disease Prediction tool to check your risk!"],
+         "context": [""]
+        },
+        {"tag": "kidney_symptoms",
+         "patterns": ["Symptoms of kidney disease", "Signs of kidney disease", "Kidney disease symptoms", "kidney symptoms", "kidney disease signs", "signs of kidney problems", "kidney warning signs"],
+         "responses": ["Symptoms of kidney disease include: swelling in legs and ankles, decreased urine output, fatigue, shortness of breath, nausea, confusion, chest pain, and high blood pressure. Early detection is key. Use our Kidney Disease Prediction tool!"],
+         "context": [""]
+        },
+        {"tag": "liver_disease_info",
+         "patterns": ["What is liver disease", "Tell me about liver disease", "Liver disease information", "What causes liver disease", "Explain liver disease", "liver disease", "liver problems", "About liver disease", "liver"],
+         "responses": ["Liver disease refers to any condition that damages the liver and affects its function. Common causes include viral infections like hepatitis, excessive alcohol consumption, obesity, and certain medications. The liver is vital for digestion, detoxification, and metabolism. Use our Liver Disease Prediction tool to check your risk!"],
+         "context": [""]
+        },
+        {"tag": "liver_symptoms",
+         "patterns": ["Symptoms of liver disease", "Signs of liver disease", "Liver disease symptoms", "liver symptoms", "liver disease signs", "jaundice symptoms", "jaundice", "liver warning signs"],
+         "responses": ["Symptoms of liver disease include: yellowing of skin and eyes (jaundice), abdominal pain and swelling, swelling in legs, itchy skin, dark urine, pale stool, chronic fatigue, nausea, and loss of appetite. Consult a doctor if you notice these signs!"],
+         "context": [""]
+        },
+        {"tag": "cancer_info",
+         "patterns": ["What is breast cancer", "Tell me about breast cancer", "Breast cancer information", "What causes breast cancer", "Explain breast cancer", "breast cancer", "cancer information", "About breast cancer", "cancer"],
+         "responses": ["Breast cancer is a disease where cells in the breast grow uncontrollably. It can occur in both men and women. Risk factors include age, family history, genetic mutations, hormonal factors, and lifestyle factors. Early detection significantly improves treatment success. Use our Breast Cancer Prediction tool!"],
+         "context": [""]
+        },
+        {"tag": "cancer_symptoms",
+         "patterns": ["Symptoms of breast cancer", "Signs of breast cancer", "Breast cancer symptoms", "cancer symptoms", "breast cancer signs", "breast lump", "breast lump symptoms", "cancer warning signs"],
+         "responses": ["Signs of breast cancer include: a new lump in breast or armpit, thickening or swelling of part of breast, skin irritation or dimpling, redness or flaky skin, pulling in of nipple, nipple discharge, pain in any area of the breast. Regular self-exams and mammograms are important!"],
+         "context": [""]
+        },
+        {"tag": "prevention",
+         "patterns": ["How to prevent disease", "Disease prevention tips", "How to stay healthy", "Health tips", "Healthy lifestyle", "How to avoid disease", "prevention tips", "stay healthy", "healthy living", "good health tips", "how to be healthy"],
+         "responses": ["Key tips for good health: 1) Eat a balanced diet with fruits and vegetables 2) Exercise regularly at least 30 minutes per day 3) Stay hydrated 4) Get enough sleep 7 to 8 hours 5) Avoid smoking and limit alcohol 6) Manage stress 7) Get regular health checkups 8) Maintain healthy weight. Prevention is better than cure!"],
+         "context": [""]
+        },
+        {"tag": "blood_pressure_info",
+         "patterns": ["What is blood pressure", "High blood pressure", "Hypertension", "Blood pressure information", "What is hypertension", "blood pressure", "BP", "high BP"],
+         "responses": ["Blood pressure is the force of blood pushing against artery walls. Normal BP is below 120/80 mmHg. High blood pressure (hypertension) is 130/80 or higher. It increases risk of heart disease and stroke. Manage it through diet, exercise, reducing salt intake, and medication if prescribed by doctor."],
+         "context": [""]
+        },
+        {"tag": "cholesterol_info",
+         "patterns": ["What is cholesterol", "High cholesterol", "Cholesterol information", "What causes high cholesterol", "cholesterol", "bad cholesterol", "LDL"],
+         "responses": ["Cholesterol is a fatty substance in your blood. Too much LDL bad cholesterol can clog arteries. Normal total cholesterol should be below 200 mg/dL. Reduce cholesterol through healthy diet limiting saturated fats, regular exercise, and avoiding smoking. Medication may also be prescribed by your doctor."],
+         "context": [""]
+        },
+        {"tag": "bmi_info",
+         "patterns": ["What is BMI", "Body mass index", "How to calculate BMI", "BMI information", "What is healthy BMI", "BMI", "body mass", "calculate BMI", "BMI calculator"],
+         "responses": ["BMI or Body Mass Index is calculated as weight in kg divided by height in meters squared. Categories: Underweight below 18.5, Normal 18.5 to 24.9, Overweight 25 to 29.9, Obese 30 and above. A healthy BMI reduces risk of diabetes, heart disease, and other conditions. Maintain healthy BMI through balanced diet and regular exercise."],
+         "context": [""]
+        },
+        {"tag": "emergency",
+         "patterns": ["Emergency", "Heart attack", "Stroke", "Medical emergency", "Need ambulance", "Call doctor", "urgent help", "I need help now"],
+         "responses": ["This sounds like a medical emergency! Please call emergency services immediately. In Pakistan dial 115, in US dial 911, in UK dial 999. Do not drive yourself to the hospital. Stay calm and wait for help. If someone is unconscious and not breathing, start CPR if trained to do so."],
          "context": [""]
         },
         {"tag": "noanswer",
          "patterns": [],
-         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
-         "context": [""]
-        },
-        {"tag": "options",
-         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
-         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Blood sugar tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
-         "context": [""]
-        },
-
-        {"tag": "Slurred_speech",
-         "patterns": ["Speak indistinctly"],
-         "responses": ["Get Consultation Online with Dr. Amarpreet. \n Please Visit : https://www.practo.com/delhi/doctor/amarpreet-singh-riar-general-physician?specialization=General%20Physician&practice_id=1026302"],
-         "context": [""]
-        },
-        
-        {"tag": "pain_behind_eyes",
-        "patterns": ["Eye pain"],
-        "responses": ["Get Consultation Online with Dr. Anirban. \n Please Visit : https://www.practo.com/delhi/doctor/anirban-biswas-diabetologist?specialization=General%20Physician&practice_id=789800"],
-        "context": [""]
-       },
-       {"tag": "breathlessness",
-         "patterns": ["Heart attack"],
-         "responses": ["Get Consultation Online with Dr. Vineet. \n Please Visit : https://www.practo.com/delhi/doctor/vineet-narula-ear-nose-throat-ent-specialist-1?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=1107540"],
-         "context": [""]
-        },
-
-        {"tag": "diarrhoea",
-         "patterns": ["Typhoid","Abdominal_pain"],
-         "responses": ["Get Consultation Online with Dr. Shruti. \n Please Visit : https://www.practo.com/delhi/doctor/shruti-gupta-dermatologist?specialization=Dermatologist&practice_id=1009300"],
-         "context": [""]
-        },
-
-        {"tag": "weight_loss",
-         "patterns": ["vomiting", "fatigue","yellowish_skin"],
-         "responses": ["Get Consultation Online with Dr. Sugeeta. \n Please Visit : https://www.practo.com/delhi/doctor/sugeeta-mutreja-dietitian-nutritionist?specialization=Ayurveda&practice_id=1010860"],
-         "context": [""]
-        },
-        {"tag": "nodal_skin_eruptions",
-         "patterns": ["itching", "skin_rash"],
-         "responses": ["Get Consultation Online with Dr. Vidit. \n Please Visit : https://www.practo.com/delhi/doctor/dr-vidit-tripathi-ear-nose-throat-ent-specialist-3?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=736234"],
-         "context": [""]
-        },
-        {"tag": "shivering",
-         "patterns": ["Allergy","watering_from_eyes"],
-         "responses": ["Get Consultation Online with Dr. Mansi. \n Please Visit : https://www.practo.com/delhi/doctor/dr-mansi-arya-bhardwaj-homeopath?specialization=Homoeopath&practice_id=786334"],
-         "context": [""]
-        },
-
-        {"tag": "lack_of_concentration",
-         "patterns": ["Hypertension","chest_pain","lack_of_concentration"],
-         "responses": ["Get Consultation Online with Dr. S.K Singh. \n Please Visit : https://www.practo.com/delhi/doctor/dr-s-k-singh-ayurveda?specialization=Ayurveda&practice_id=725617"],
-         "context": [""]
-        },
-        {"tag": "patches_in_throat",
-         "patterns": ["AIDS"],
-         "responses": ["Get Consultation Online with Dr. Throats. \n Please Visit : https://www.practo.com/delhi/doctor/dr-54-general-physician-1?specialization=General%20Physician&practice_id=1071396"],
-         "context": [""]
-        },
-        {"tag": "muscle_pain",
-         "patterns": ["muscle_pain", "mild_fever"],
-         "responses": ["Get Consultation Online with Dr. Gayatri. \n Please Visit : https://www.practo.com/delhi/doctor/dr-gayatri-bala-juneja-gynecologist-obstetrician-2?specialization=Gynecologist/Obstetrician&practice_id=1010694"],
-         "context": [""]
-        },
-        {"tag": "muscle_weakness",
-         "patterns": ["Arthritis"],
-         "responses": ["Get Consultation Online with Dr. Sunil. \n Please Visit : https://www.practo.com/delhi/doctor/dr-sunil-kumar-dwivedi-homeopath?specialization=Homoeopath&practice_id=654411"],
-         "context": [""]
-        },
-        {"tag": "abnormal_menstruation",
-         "patterns": ["Hypothyroidism"],
-         "responses": ["Get Consultation Online with Dr. Vijay. \n Please Visit : https://www.practo.com/delhi/doctor/dr-vijay-abbot-sexologist?specialization=Ayurveda&practice_id=688515"],
-         "context": [""]
-        },
-        {"tag": "Diabetes",
-         "patterns": ["increased_appetite"],
-         "responses": ["Get Consultation Online with Dr. Anshul. \n Please Visit : https://www.practo.com/delhi/doctor/dr-anshul-gupta-ear-nose-throat-ent-specialist-1?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=712546"],
-         "context": [""]
-        },
-        {"tag": "red_spot_over_body",
-         "patterns": ["Chicken Pox","High_Fever","Headache"],
-         "responses": ["Get Consultation Online with Dr. Inderjit. \n Please Visit : https://www.practo.com/delhi/doctor/inderjeet-singh-ayurveda-sexologist?specialization=Homoeopath&practice_id=1219975"],
-         "context": [""]
-        },
-        {"tag": "adverse_drug",
-         "patterns": ["How to check Adverse drug reaction?", "Open adverse drugs module", "Give me a list of drugs causing adverse behavior", "List all drugs suitable for patient with adverse reaction", "Which drugs dont have adverse reaction?" ],
-         "responses": ["Navigating to Adverse drug reaction module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure",
-         "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
-         "responses": ["Navigating to Blood Pressure module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure_search",
-         "patterns": ["I want to search for blood pressure result history", "Blood pressure for patient", "Load patient blood pressure result", "Show blood pressure results for patient", "Find blood pressure results by ID" ],
-         "responses": ["Please provide Patient ID", "Patient ID?"],
-         "context": ["search_blood_pressure_by_patient_id"]
-        },
-        {"tag": "search_blood_pressure_by_patient_id",
-         "patterns": [],
-         "responses": ["Loading Blood pressure result for Patient"],
-         "context": [""]
-        },
-        {"tag": "pharmacy_search",
-         "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy" ],
-         "responses": ["Please provide pharmacy name"],
-         "context": ["search_pharmacy_by_name"]
-        },
-        {"tag": "search_pharmacy_by_name",
-         "patterns": [],
-         "responses": ["Loading pharmacy details"],
-         "context": [""]
-        },
-        {"tag": "hospital_search",
-         "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
-         "responses": ["Please provide hospital name or location"],
-         "context": ["search_hospital_by_params"]
-        },
-        {"tag": "search_hospital_by_params",
-         "patterns": [],
-         "responses": ["Please provide hospital type"],
-         "context": ["search_hospital_by_type"]
-        },
-        {"tag": "search_hospital_by_type",
-         "patterns": [],
-         "responses": ["Loading hospital details"],
+         "responses": ["I am sorry, I did not quite understand that. Could you rephrase? I can help you with information about Diabetes, Heart Disease, Kidney Disease, Liver Disease, and Breast Cancer."],
          "context": [""]
         }
    ]

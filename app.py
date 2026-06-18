@@ -371,6 +371,7 @@ def predict_class(sentence, model2):
 def getResponse(ints, intents_json):
     tag = ints[0]['intent']
     list_of_intents = intents_json['intents']
+    result = "I'm sorry, I didn't understand that. Please try again."
     for i in list_of_intents:
         if(i['tag']== tag):
             result = random.choice(i['responses'])
